@@ -3,14 +3,13 @@ package com.adv2015.day03;
 import java.util.Objects;
 
 public class House {
-    private int x;
-    private int y;
+    private final int x;
+    private final int y;
 
     public House(int x, int y) {
         this.x = x;
         this.y = y;
     }
-
 
     @Override
     public boolean equals(Object o) {
