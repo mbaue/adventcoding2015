@@ -1,5 +1,7 @@
 package com.adv2015.day04;
 
+import org.apache.commons.codec.digest.DigestUtils;
+
 /**
  * https://adventofcode.com/2015/day/4
  * --- Day 4: The Ideal Stocking Stuffer ---
@@ -18,6 +20,13 @@ package com.adv2015.day04;
  * If your secret key is pqrstuv, the lowest number it combines with to make an MD5 hash
  * starting with five zeroes is 1048970; that is, the MD5 hash of pqrstuv1048970 looks like 000006136ef....
  * Your puzzle input is ckczppom.
+ *
+ * Your puzzle answer was 117946.
+ *
+ * --- Part Two ---
+ * Now find one that starts with six zeroes.
+ *
+ * Your puzzle answer was 3938038.
  */
 
 public class Day04 {
@@ -25,6 +34,20 @@ public class Day04 {
     public static final String input = "ckczppom";
 
     public static void main(String[] args) {
+        long i = 0L;
+        String hash;
+        String leadingString;
+        String addition;
+        do {
+            addition = Long.toString(i);
+            hash = DigestUtils.md5Hex(input + addition);
+            //leadingString = hash.substring(0, 5);
+            leadingString = hash.substring(0, 6);
+            i++;
+        //} while (!leadingString.equals("00000"));
+        } while (!leadingString.equals("000000"));
+        System.out.println(addition);
+        System.out.println(hash);
 
     }
 }
