@@ -6,6 +6,7 @@ import java.io.FileReader;
 import java.io.IOException;
 
 /**
+ * https://adventofcode.com/2015/day/6
  * --- Day 6: Probably a Fire Hazard ---
  * --- Part Two ---
  * You just finish implementing your winning light pattern when you realize you mistranslated
